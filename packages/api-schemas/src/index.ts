@@ -1,17 +1,14 @@
-/**
- * @file schemas.ts
- * Re-exports shared API schemas from @yieldvault/api-schemas.
- *
- * Import the schema you need and pass it to `validate()` from ./validation
- * before calling any API function.
- */
-
 export {
   StellarAddressSchema,
   AmountSchema,
+  AmountInputSchema,
   ShareCountSchema,
   AssetCodeSchema,
   IsoDatestamp,
+  SlippageBpsSchema,
+} from "./primitives";
+
+export {
   DepositRequestSchema,
   WithdrawalRequestSchema,
   VaultHistoryQuerySchema,
@@ -25,4 +22,19 @@ export {
   type WalletAddressParam,
   type TransactionQuery,
   type TransactionQueryInput,
-} from "@yieldvault/api-schemas";
+} from "./requests";
+
+export {
+  VaultOperationResponseSchema,
+  type VaultOperationResponse,
+} from "./responses";
+
+export {
+  VaultDepositBodySchema,
+  VaultWithdrawalBodySchema,
+  SignedVaultDepositBodySchema,
+  SignedVaultWithdrawalBodySchema,
+  VaultOperationSchema,
+  type VaultDepositBody,
+  type VaultWithdrawalBody,
+} from "./vault";
